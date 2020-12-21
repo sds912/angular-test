@@ -1,3 +1,4 @@
+import { MaterialModule } from './material/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
@@ -13,6 +14,9 @@ import { LoginComponent } from './views/login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { JwtInterceptor } from './_helpers/jwt.interceptor';
 import { ErrorInterceptor } from './_helpers/error.interceptor';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MtableComponent } from './components/mtable/mtable.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 
 @NgModule({
@@ -21,14 +25,18 @@ import { ErrorInterceptor } from './_helpers/error.interceptor';
     HomePageComponent,
     AdminPageComponent,
     PostItemComponent,
-    LoginComponent
+    LoginComponent,
+    MtableComponent,
   ],
   imports: [
 BrowserModule,
     RouterModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MaterialModule,
+    MatPaginatorModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
