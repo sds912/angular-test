@@ -1,0 +1,9 @@
+<div>
+
+      <h2>Hello from home</h2>
+        {{posts.length}}
+        <div>
+            <app-post-item *ngFor="let post of posts; let id = index" [post]="post" [index]="id"></app-post-item>
+        </div>
+   
+</div>

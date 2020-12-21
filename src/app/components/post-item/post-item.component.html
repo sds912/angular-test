@@ -1,0 +1,7 @@
+<div>
+    <ul [ngStyle]="post.state == 1 ? {'color': 'red'} : {'color': 'green'}">
+        <li>{{post.title}}</li>
+        <li>{{post.description}}</li>
+        <button type="button" (click)="onDelete(post.id)"> supprimer</button>
+    </ul>
+</div>
